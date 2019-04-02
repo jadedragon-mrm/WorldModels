@@ -128,7 +128,7 @@ class Sampler(chainer.training.Extension):
 
 def main():
     parser = argparse.ArgumentParser(description='World Models ' + ID)
-    parser.add_argument('--data_dir', '-d', default="/data/wm", help='The base data/output directory')
+    parser.add_argument('--data_dir', '-d', default="data/wm", help='The base data/output directory')
     parser.add_argument('--game', default='CarRacing-v0',
                         help='Game to use')  # https://gym.openai.com/envs/CarRacing-v0/
     parser.add_argument('--experiment_name', default='experiment_1', help='To isolate its files from others')
@@ -139,7 +139,7 @@ def main():
     parser.add_argument('--no_resume', action='store_true', help='Don''t auto resume from the latest snapshot')
     parser.add_argument('--resume_from', '-r', default='', help='Resume the optimization from a specific snapshot')
     parser.add_argument('--test', action='store_true', help='Generate samples only')
-    parser.add_argument('--gpu', '-g', default=-1, type=int, help='GPU ID (negative value indicates CPU)')
+    parser.add_argument('--gpu', '-g', default=0, type=int, help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--epoch', '-e', default=1, type=int, help='number of epochs to learn')
     parser.add_argument('--snapshot_interval', '-s', default=100, type=int,
                         help='100 = snapshot every 100itr*batch_size imgs processed')
