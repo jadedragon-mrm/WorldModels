@@ -376,7 +376,7 @@ class DispatcherServer(object):
 
 def main():
     parser = argparse.ArgumentParser(description='World Models ' + ID)
-    parser.add_argument('--data_dir', '-d', default="/data/wm", help='The base data/output directory')
+    parser.add_argument('--data_dir', '-d', default="data/wm", help='The base data/output directory')
     parser.add_argument('--game', default='CarRacing-v0',
                         help='Game to use')  # https://gym.openai.com/envs/CarRacing-v0/
     parser.add_argument('--experiment_name', default='experiment_1', help='To isolate its files from others')
@@ -399,7 +399,7 @@ def main():
                         help='If in a distributed cpu cluster. Set CLUSTER_ variables accordingly.')
     parser.add_argument('--test', action='store_true',
                         help='Generate a rollout gif only (must have access to saved snapshot or model)')
-    parser.add_argument('--gpu', '-g', default=-1, type=int, help='GPU ID (negative value indicates CPU)')
+    parser.add_argument('--gpu', '-g', default=0, type=int, help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--gpus', default="", help='A list of gpus to use, i.e. "0,1,2,3"')
     parser.add_argument('--curriculum', default="", help='initial,step e.g. 50,5 starts at 50 steps and adds 5 steps')
     parser.add_argument('--predict_done', action='store_true', help='Whether MDN-RNN should also predict done state')
